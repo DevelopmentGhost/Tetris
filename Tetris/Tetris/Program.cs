@@ -13,19 +13,22 @@ namespace Tetris
             Console.SetWindowSize(40, 30); // вказуємо розмір вікна
             Console.SetBufferSize(40, 30); //вказуємо для буферної області (прокрутка ховається за вікно консолі)
 
-            int x = Convert.ToInt32(Console.ReadLine());
-            int y = Convert.ToInt32(Console.ReadLine());
-            char c = Convert.ToChar(Console.ReadLine());
+            
+            Point p1 = new Point();
+            p1.x = Convert.ToInt32(Console.ReadLine());
+            p1.y = Convert.ToInt32(Console.ReadLine());
+            p1.c = Convert.ToChar(Console.ReadLine());
+            p1.PrintSymbol(p1.x, p1.y, p1.c);
 
-            PrintSymbol(x, y, c);
+
+            Point p2 = new Point();
+            p2.x = Convert.ToInt32(Console.ReadLine());
+            p2.y = Convert.ToInt32(Console.ReadLine());
+            p2.c = Convert.ToChar(Console.ReadLine());
+            p2.PrintSymbol(p2.x, p2.y, p2.c);
             Console.ReadLine();
         }
 
-        static void PrintSymbol(int x, int y, char c)
-        {
-            Console.Clear();
-            Console.SetCursorPosition(x, y);
-            Console.Write(c);
-        }
+        
     }
 }
