@@ -10,8 +10,22 @@ namespace Tetris
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Start development application - Tetris.))");
+            Console.SetWindowSize(40, 30); // вказуємо розмір вікна
+            Console.SetBufferSize(40, 30); //вказуємо для буферної області (прокрутка ховається за вікно консолі)
+
+            int x = Convert.ToInt32(Console.ReadLine());
+            int y = Convert.ToInt32(Console.ReadLine());
+            char c = Convert.ToChar(Console.ReadLine());
+
+            PrintSymbol(x, y, c);
             Console.ReadLine();
+        }
+
+        static void PrintSymbol(int x, int y, char c)
+        {
+            Console.Clear();
+            Console.SetCursorPosition(x, y);
+            Console.Write(c);
         }
     }
 }
